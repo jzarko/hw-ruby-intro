@@ -72,8 +72,7 @@ def starts_with_consonant? s
   end 
 
   testChar = s[0]
-  invalidChars = "aeiouAEIOU!@#$%^&*()-_=+\'\"[]{}\\\|:;?/.,<>`~ 123456789"
-  puts testChar
+  invalidChars = "aeiouAEIOU!@#$%^&*()-_=+\'\"[]{}\\\|:;?/.,<>`~ 123456789"   # try messing around with s.match?()
   if invalidChars.include?(testChar)
     return false
   end
@@ -81,8 +80,26 @@ def starts_with_consonant? s
   return true   # returns true if testChar is not invalid or empty
 end
 
+# Take a binary string and see if it is a multiple of 4. If it is, return true
+# If the string is not a binary number, then return false
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  # case if s is an empty string
+  if s == ""
+    return false
+  end 
+
+  # if s isnt a binary value
+  if s.match?(/[^01]/) == true
+    return false
+  end
+
+  # if s is a binary value, convert it to decimal then see if s % 4 has a remainder
+  decimalVal = s.to_i(2)
+  if decimalVal % 4 == 0
+    return true
+  else
+    return false
+  end
 end
 # --------------------------------------------------------------------------------------------------------------------------
 
