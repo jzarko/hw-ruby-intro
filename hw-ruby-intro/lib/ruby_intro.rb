@@ -1,6 +1,6 @@
 # When done, submit this entire file to the autograder.
 
-# Part 1
+# -------------------------------------------------------   Part 1   -------------------------------------------------------
 
 # Use the each method to easily add the current number to the total
 # Return the total sum
@@ -54,23 +54,42 @@ def sum_to_n? arr, n
 
   return false    # if the array is not empty and none of the elems sum to 0, return false
 end
+# --------------------------------------------------------------------------------------------------------------------------
 
-# Part 2
+# -------------------------------------------------------   Part 2   -------------------------------------------------------
 
+# Takes an input name and returns a concatenated greeting + name
 def hello(name)
-  # YOUR CODE HERE
+  greeting = "Hello, " + name
+  return greeting
 end
 
+# Take the first character of a string and return true if its a consanant
+# Check the character against all invalid possible charaters to see if its valid
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  if s.empty?         # case of empty string
+    return false
+  end 
+
+  testChar = s[0]
+  invalidChars = "aeiouAEIOU!@#$%^&*()-_=+\'\"[]{}\\\|:;?/.,<>`~ 123456789"
+  puts testChar
+  if invalidChars.include?(testChar)
+    return false
+  end
+
+  return true   # returns true if testChar is not invalid or empty
 end
 
 def binary_multiple_of_4? s
   # YOUR CODE HERE
 end
+# --------------------------------------------------------------------------------------------------------------------------
 
-# Part 3
+# -------------------------------------------------------   Part 3   -------------------------------------------------------
 
 class BookInStock
 # YOUR CODE HERE
 end
+
+# --------------------------------------------------------------------------------------------------------------------------
