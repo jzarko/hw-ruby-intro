@@ -24,13 +24,35 @@ def max_2_sum arr
     return arr[0]
   end
 
-  arr.sort!
-  sum = arr[-1] + arr[-2]
+  arr.sort!                 # if array has 2+ elements, sort them...
+  sum = arr[-1] + arr[-2]   # and return the sum of the last 2
   return sum
 end
 
+# Check if elements a + b = n for any elements in the array
+# Return a bool T/F if a + b = n is in the array
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  arrLength = arr.length
+  sum = 0
+
+  # if the array has < 2 elements, then sum a + b = n is impossible
+  if arrLength < 2
+    return false
+  end
+
+  # check each element against every other one
+  # you can narrow the checking range with every loop through the array
+  #     because you would just be re-checking values pointlesslyarrLength = arr.length
+  for i in 0..arrLength-2 do
+    for j in i+1..arrLength-1 do
+      sum = arr[i] + arr[j]
+      if sum == n
+        return true
+      end
+    end
+  end
+
+  return false    # if the array is not empty and none of the elems sum to 0, return false
 end
 
 # Part 2
