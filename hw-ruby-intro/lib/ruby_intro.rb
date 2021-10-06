@@ -106,7 +106,40 @@ end
 # -------------------------------------------------------   Part 3   -------------------------------------------------------
 
 class BookInStock
-# YOUR CODE HERE
+
+  def initialize(isbn, price)
+    # raise errors if invalid data is entered
+    raise ArgumentError.new(    # error if price <= 0
+      "Price <= 0"
+    ) if price <= 0
+    raise ArgumentError.new(    # error if isbn = ""
+      "Invalid ISBN"
+    ) if isbn.empty?
+    @isbn = isbn
+    @price = price
+  end
+
+  def isbn                  # Getter
+    @isbn
+  end
+
+  def isbn=( value )        # Setter
+    @isbn = value
+  end
+
+  def price                 # Getter
+    @price
+  end
+
+  def price=( value )       # Setter
+    @price = value
+  end
+
+  def price_as_string()
+    # use special formatting with the % sign to limit price to 2 decimal places
+    return "$%.2f" % price
+  end
+
 end
 
 # --------------------------------------------------------------------------------------------------------------------------
