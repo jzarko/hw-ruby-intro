@@ -1,12 +1,12 @@
 require 'fun_with_strings'
 require 'byebug'
 
-describe '[2 points] palindrome detection', :pending => true do# do
+describe '[2 points] palindrome detection' do
   it 'should work for simple strings' do
     expect('redivider').to  be_a_palindrome
     expect('abracadabra').not_to  be_a_palindrome
   end
-  it 'should be case-insensitive', :pending => true do
+  it 'should be case-insensitive' do
     expect('ReDivider').to be_a_palindrome
   end
   it 'should ignore nonword characters', :pending => true do

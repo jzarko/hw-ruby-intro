@@ -1,11 +1,24 @@
 module FunWithStrings
-  def palindrome?
-    def testPalindrome(string)
 
-    end
-    # def testPal(string)
-    #   puts "Hello"
+  String#downcase
+  String#reverse
+
+  def palindrome?
+    # puts "Hello 2"
+    # def testPalindrome(string)
+    #   print "ORIGINAL: #{string}"
+    #   string.downcase
+    #   string.reverse
+    #   print "NEW:      #{string}"
     # end
+    testString.downcase
+    testPalindrome = testString
+    testPalindrome.reverse
+    if testString == testPalindrome
+      return true
+    else
+      return false
+    end
 
   end
   def count_words
@@ -20,17 +33,18 @@ end
 
 class String
   include FunWithStrings
-
-  def initialize(inputStr)
-    @testString = inputStr
-  end
-  
-  def testString
-    @string
-  end
-
-  def testString=( value )
-    @string = value
-  end
-
+  attr_reader :testString
 end
+
+# def initialize(inputStr)
+  #   @testString = inputStr
+  # end
+
+# def testString
+  #   @string
+  # end
+
+  # def testString=( value )
+  #   @string = value
+  # end
+  
