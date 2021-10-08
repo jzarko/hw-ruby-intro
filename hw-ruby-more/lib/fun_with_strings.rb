@@ -1,20 +1,11 @@
 module FunWithStrings
-
-  String#downcase
-  String#reverse
-
   def palindrome?
-    # puts "Hello 2"
-    # def testPalindrome(string)
-    #   print "ORIGINAL: #{string}"
-    #   string.downcase
-    #   string.reverse
-    #   print "NEW:      #{string}"
-    # end
-    testString.downcase
-    testPalindrome = testString
-    testPalindrome.reverse
-    if testString == testPalindrome
+    # make the test strings valid
+    origStringNonwordStripped = self.gsub(/\W/, "")
+    origStringNonwordStripped = origStringNonwordStripped.downcase
+    reversedString = origStringNonwordStripped.reverse
+
+    if origStringNonwordStripped == reversedString
       return true
     else
       return false
@@ -32,19 +23,5 @@ end
 # make all the above functions available as instance methods on Strings:
 
 class String
-  include FunWithStrings
-  attr_reader :testString
+  include FunWithStrings  
 end
-
-# def initialize(inputStr)
-  #   @testString = inputStr
-  # end
-
-# def testString
-  #   @string
-  # end
-
-  # def testString=( value )
-  #   @string = value
-  # end
-  
